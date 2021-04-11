@@ -1,6 +1,6 @@
 # Java Commons
 
-Various utilities that can be used in Java applications. 
+Various utilities those can be used in Java applications. 
 
 # Usage
 
@@ -62,13 +62,13 @@ LruMap<String, File> cache = new LruMap<>(cacheSize);
 ```java
 //loads data from the source after a specified duration
 TimedCache<List<Customer>> cache = TimedCache.<Set<String>>newBuilder()
-											.supplier(CustomerDAO::loadExpired)
-											.timeout(5, TimeUnit.MINUTES)
-											.executor(MyClass.myExecutor)
-											.build();
+					.supplier(CustomerDAO::loadExpired)
+					.timeout(5, TimeUnit.MINUTES)
+					.executor(MyClass.myExecutor)
+					.build();
 
 //Get calls not blocked during reload, previous one will be returned.
-List<Customer> cache = expiredCustomers.get();
+List<Customer> expiredCustomers = cache.get();
 ```
 
 #### And other various utilities
